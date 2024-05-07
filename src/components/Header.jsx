@@ -29,6 +29,11 @@ const Header = () => {
     };
   }, []);
 
+  const scrollToDiv = (id) => {
+    const div = document.getElementById(id);
+    div.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     // <header className="p-3 md:p-6 flex justify-between items-center">
     <header
@@ -37,17 +42,20 @@ const Header = () => {
       } sticky top-0 z-50 transition-all duration-500`}
     >
       <div className="flex  items-center   flex-1">
-        <h2 className="font text-black-100 md:text-3xl font-black">
-          Fast Gold <span style={{ color: COLORS.goldPrimary }}>Africa</span>
-        </h2>
+        <div>
+          <h2 className="font text-black-100 md:text-3xl font-black">
+            Fast Gold <span style={{ color: COLORS.goldPrimary }}>Africa</span>
+          </h2>
+          <p className="font text-sm font-semibold">Your Reliable Gold Trading Partner</p>
+        </div>
 
         <div className="hidden md:flex gap-5 flex-1 justify-center">
           {links.map((link) => (
             <a
               style={{}}
-              className="text-black-100 font-semibold  tracking-wide hovertext transition-all font"
+              className="text-black-100 font-semibold  tracking-wide hovertext cursor-pointer transition-all font"
               key={link.id}
-              href={link.to}
+              onClick={() => scrollToDiv(link.to)}
             >
               {link.title}
             </a>
@@ -83,7 +91,10 @@ const Header = () => {
               style={{ color: COLORS.goldPrimary }}
               className="tracking-wide text-4xl font-extrabold font"
               key={link.id}
-              href={link.to}
+              onClick={() => {
+                scrollToDiv(link.to);
+                setIsOpen(false);
+              }}
             >
               {link.title}
             </a>

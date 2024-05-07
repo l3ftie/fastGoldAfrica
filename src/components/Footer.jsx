@@ -7,8 +7,13 @@ import { COLORS } from "../assets/themes";
 import { links, socialMedia } from "../utils";
 
 const Footer = () => {
+  const scrollToDiv = (id) => {
+    const div = document.getElementById(id);
+    div.scrollIntoView({ behavior: "instant" });
+  };
+
   return (
-    <footer style={{ backgroundColor: COLORS.stableGray }}>
+    <footer className="bg-black-100">
       <FloatingWhatsApp
         phoneNumber="+263785404096"
         accountName="Fast Gold Africa"
@@ -21,7 +26,7 @@ const Footer = () => {
           <h2 className="font md:text-3xl font-black">
             Fast Gold <span style={{ color: COLORS.goldPrimary }}>Africa</span>
           </h2>
-          <p className="text-[14px]">Your Reputable Gold Helper</p>
+          <p className="text-[14px]">Your Reliable Gold Trading Partner</p>
           <div className="my-5">
             <p>Follow us on:</p>
             <div className="flex gap-3">
@@ -40,7 +45,7 @@ const Footer = () => {
           <div className="flex flex-col mt-2 gap-1">
             {links.map((link) => (
               <a
-                href={link.to}
+                onClick={() => scrollToDiv(link.to)}
                 style={{ color: COLORS.babyWhite }}
                 className="flex items-center cursor-pointer hover:group gap-5 hover:translate-x-1 transition-all"
               >

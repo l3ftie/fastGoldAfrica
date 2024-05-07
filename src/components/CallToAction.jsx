@@ -11,7 +11,7 @@ const CallToAction = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="p-2 h-full min-h-72 relative flex"
+      className="p-2  min-h-72 relative flex"
     >
       <div
         className="absolute top-0 left-0 right-0 bottom-0 h-full w-full"

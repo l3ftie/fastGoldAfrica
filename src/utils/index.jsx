@@ -4,22 +4,22 @@ export const links = [
   {
     id: 1,
     title: "Home",
-    to: "/",
+    to: "home",
   },
   {
     id: 2,
     title: "About",
-    to: "/about",
+    to: "about",
   },
   {
     id: 3,
     title: "How it Works",
-    to: "/transportation",
+    to: "howItWorks",
   },
   {
     id: 4,
     title: "Contact Us",
-    to: "/contact",
+    to: "contact",
   },
 ];
 
