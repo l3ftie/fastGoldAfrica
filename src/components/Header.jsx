@@ -38,7 +38,7 @@ const Header = () => {
     // <header className="p-3 md:p-6 flex justify-between items-center">
     <header
       className={`p-3 md:p-6 flex justify-between items-center ${
-        isScrolled ? "bg-gray-50 bg-opacity-20" : ""
+        isScrolled ? "bg-white bg-opacity-90" : ""
       } sticky top-0 z-50 transition-all duration-500`}
     >
       <div className="flex  items-center   flex-1">

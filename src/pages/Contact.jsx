@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import img1 from "../assets/goldgold.jpg";
 import img2 from "../assets/goldgold2.jpg";
+import { COLORS } from "../assets/themes.jsx";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -21,13 +22,14 @@ const Contact = () => {
           <img src={img2} className="  object-contain" alt="fast gold africa contact us" />
         </div>
       </div>
-      <div className="col-span-4 px-3 md:px-0 py-24 md:py-32 bg-black-100 h-screen">
-        <form onSubmit={handleSubmit}>
+      <div className="col-span-4 p-3 md:px-0 py-24 md:py-32 bg-black-100 h-screen">
+        <form className="w-full md:w-2/3 mx-auto" onSubmit={handleSubmit}>
           <div className="flex flex-col">
             <label className="font text-blue-50 uppercase text-[14px]" htmlFor="name">
               Name
             </label>
             <input
+              className="p-2 rounded-lg"
               type="text"
               name="name"
               id="name"
@@ -40,6 +42,7 @@ const Contact = () => {
               Email
             </label>
             <input
+              className="p-2 rounded-lg"
               type="email"
               name="email"
               id="email"
@@ -52,6 +55,7 @@ const Contact = () => {
               message
             </label>
             <textarea
+              className="p-2 rounded-lg"
               type="text"
               name="message"
               id="message"
@@ -59,7 +63,13 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <button type="button">Submit</button>
+          <button
+            className="my-3 w-full p-3 rounded-lg"
+            style={{ backgroundColor: COLORS.goldPrimary }}
+            type="button"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
